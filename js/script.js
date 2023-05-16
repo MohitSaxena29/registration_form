@@ -36,7 +36,7 @@ const Validation = () => {
     var emailId=localStorage.setItem('email',email);
     var inputPassword=localStorage.setItem('password',password);
     var securityQuestion=localStorage.setItem('question',question);
-    var securityAnswer=localStorage.setItem('inputAnswer',answer);
+    var securityAnswer=localStorage.setItem('Answer',answer);
 
 
     alert('Data inserted succesfully');
