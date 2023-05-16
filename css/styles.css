@@ -1,0 +1,45 @@
+body{
+    background: linear-gradient(to right, blue, aqua);
+
+}
+
+.heading{
+    margin-top:60px;
+}
+  
+.name{
+    margin-top: 150px; 
+    margin-left: 10px;
+}
+.card{
+    background-color: white ;
+    border-bottom-left-radius: 15% 40%;
+    border-top-left-radius: 15% 40%;
+    padding-left: 20px;
+    margin: 20px;
+}
+
+    
+.inputCustom{
+    background-color: white ;
+}
+
+
+.loginButton{
+    background-color: white;
+    color: black ;
+}
+
+.loginButton:hover{
+    background-color: green;
+}
+
+button .submit{
+    background-color: blue ;
+}
+
+#submit:hover{
+    background-color: green;
+    transition: 0.5s;
+}
+
