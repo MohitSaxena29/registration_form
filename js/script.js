@@ -39,6 +39,6 @@ const Validation = () => {
     var securityAnswer=localStorage.setItem('Answer',answer);
 
 
-    alert('Data inserted succesfully');
+    alert('Data inserted successfully');
     return true;
   }
