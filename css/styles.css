@@ -11,6 +11,10 @@ body{
     margin-top: 150px; 
     margin-left: 10px;
 }
+
+.row{
+    margin-bottom: 15px;
+}
 .card{
     background-color: white ;
     border-bottom-left-radius: 15% 40%;
