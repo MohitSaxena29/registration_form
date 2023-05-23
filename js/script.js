@@ -148,7 +148,7 @@ const validateForm=(evt)=> {
 
     
 
-    // retrieving data
+    // storing data
 
     const myObj = {
        fname: document.getElementById('firstName').value,
@@ -174,61 +174,38 @@ const validateForm=(evt)=> {
 
     // CONVERT STRING TO REGULAR JS OBJECT
     parsedObject = JSON.parse(retrievedObject);
-    return true;
-  
-}
 
+    retrievedObject = localStorage.getItem("storedData");
+    if(retrievedObject!=null){
+    // CONVERT STRING TO REGULAR JS OBJECT
+    parsedObject = JSON.parse(retrievedObject);
+    console.log(parsedObject);
+    let values=Object.values(parsedObject);
+    let idx = 0;
+      let tbody = document.getElementById('body');
+      let trow=document.createElement('tr');
+      for(let j = 0; j < 7; j++) {
+        if(idx==4)
+          idx++;
+        let tdata = document.createElement('td');
+        tdata.textContent = values[idx++];
+        trow.appendChild(tdata);
+      }
+    tbody.appendChild(trow);
+  }
+  return false;
+}
 
 // creating table
 
-const names=['First Name','Last Name','Email','Phone Number','Gender','Password','Secutity Question','Answer'];
+const names=['First Name','Last Name','Email','Phone Number','Password','Secutity Question','Answer'];
 let index=0;
-for(let i = 0; i < 2; i++) {
-  let id = "head" + (i + 1);
-  let thead = document.getElementById(id);
+  let thead = document.getElementById('head');
   let trow=document.createElement('tr');
-  for(let j = 0; j < 4; j++) {
+  for(let j = 0; j < 7; j++) {
     let thead = document.createElement('th');
     thead.textContent = names[index++];
     trow.appendChild(thead);
   }
   thead.appendChild(trow);
-}
-
-// READ STRING FROM LOCAL STORAGE
-
-// READ STRING FROM LOCAL STORAGE
-retrievedObject = localStorage.getItem("storedData");
-if(retrievedObject!=null){
-  // CONVERT STRING TO REGULAR JS OBJECT
-  parsedObject = JSON.parse(retrievedObject);
-  console.log(parsedObject);
-  let values=Object.values(parsedObject);
-  let idx = 0;
-  for(let i = 0; i < 2; i++) {
-    let id = "body" + (i + 1);
-    let tbody = document.getElementById(id);
-    let trow=document.createElement('tr');
-    for(let j = 0; j < 4; j++) {
-      let tdata = document.createElement('td');
-      tdata.textContent = values[idx++];
-      trow.appendChild(tdata);
-    }
-    tbody.appendChild(trow);
-  }
-}
-else{
-  for(let i = 0; i < 2; i++) {
-    let id = "body" + (i + 1);
-    let tbody = document.getElementById(id);
-    let trow=document.createElement('tr');
-    for(let j = 0; j < 4; j++) {
-      let tdata = document.createElement('td');
-      tdata.textContent = "Please Fill Data";
-      trow.appendChild(tdata);
-    }
-    tbody.appendChild(trow);
-  }
-}
-
-
+  
