@@ -13,7 +13,7 @@ html,body{
 }
 
 .col-md-3{
-    margin-top: 180px;
+    margin-top: 150px;
 }
 
 .col-md-6 div{
@@ -76,7 +76,7 @@ td{
     border-top-left-radius: 15% 40%;
     padding-left: 20px;
     margin: 20px;
-    margin-top: 180px;
+    margin-top: 150px;
 }
 
 .error{
